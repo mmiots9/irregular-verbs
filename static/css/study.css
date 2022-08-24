@@ -1,0 +1,40 @@
+/* Tag selector */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+table {
+    width: 100vw;
+    text-align: center;
+}
+
+/* Class selectors */
+.italiano {
+    background-color: plum;
+}
+
+.past-simple {
+    background-color: springgreen;
+}
+
+.past.participle {
+    background-color: lightsalmon;
+}
+
+.present-simple {
+    background-color: cornflowerblue;
+}
+
+.table-header {
+    font-size: 2vw;
+    font-weight: bold;
+    position: sticky;
+    text-transform: uppercase;
+    top: 0;
+}
+
+.verbs {
+    font-size: 1.3vw;
+    height: 5vw;
+}

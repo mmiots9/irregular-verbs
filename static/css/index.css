@@ -1,0 +1,53 @@
+/* Tag selector */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+    color: #54BAB9;
+}
+
+body {
+    background-color: #FBF6EF;
+}
+
+button {
+    background: #9ED2C6;
+    border-radius: 2vw;
+    border: none;
+    color: #FBF6EF;
+    font-size: 4vh;
+    height: 10vh;
+    width: 20vw;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+h1 {
+    height: 50vh;
+    font-size: 18vh;
+    padding: 16vh 0;
+}
+
+h2 {
+    height: 10vh;
+    font-size: 4vh;
+    padding: 3vh 0;
+}
+
+form {
+    display: inline-block;
+    height: 10vh;
+    width: 50vw;
+    margin: 10vh 0;
+}
+
+/* Id selector */
+#form-container {
+    height: 30vh;
+}
+
+#study_form {
+    float: left;
+}

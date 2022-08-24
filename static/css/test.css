@@ -1,0 +1,124 @@
+/* Tag selector */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #FBF6EF;
+}
+
+button {
+    background: #9ED2C6;
+    border-radius: 2vw;
+    border: none;
+    color: #FBF6EF;
+    font-size: 2.4vh;
+    height: 5vh;
+    margin: 0.8vh 1vw;
+    float: right;
+    width: 20vw;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+div {
+    text-align: center;
+}
+
+form {
+    clear: both;
+}
+
+form p {
+    background-color: inherit;
+    border: 0px;
+    border-radius: 3vw;
+    display: block;
+    font-size: 4.8vh;
+    padding: 1.6vh;
+    text-align: center;
+    width: 100%;
+}
+
+header {
+    font-size: 2.4vh;
+    font-weight: bold;
+    height: 4.8vh;
+    padding: 0 3vw;
+}
+
+header span {
+    background-color: #9ED2C6;
+    border-radius: 3vw;
+    padding: 0.8vh 3vw;
+}
+
+input:focus {
+    color: white;
+    border: none;
+    outline: none;
+}
+
+input {
+    color: white;
+}
+
+label,
+input {
+    background-color: inherit;
+    border: 0px;
+    border-radius: 3vw;
+    display: block;
+    font-size: 4.8vh;
+    padding: 1.6vh;
+    text-align: center;
+    width: 100%;
+}
+
+label {
+    text-transform: uppercase;
+}
+
+/* Class selector */
+
+.form-container {
+    height: 74.4vh;
+}
+
+.italiano {
+    background-color: plum;
+}
+
+.past-simple {
+    background-color: springgreen;
+}
+
+.present-perfect {
+    background-color: lightsalmon;
+}
+
+.present-simple {
+    background-color: cornflowerblue;
+}
+
+.question {
+    border-radius: 3vw;
+    height: 17.4vh;
+    margin-bottom: 1vh;
+}
+
+.wrapper {
+    padding: 10vh 15vw;
+}
+
+/* Id selector */
+#remaining-questions {
+    float: right;
+}
+
+#question-number {
+    float: left;
+}

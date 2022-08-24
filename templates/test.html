@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+
+    <link rel="stylesheet" href="static/css/test.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>    
+            <span id="question-number">Question number: {{ q_number }}</span>
+            <span id="remaining-questions">Remaining: {{ remaining_questions }}</span>
+        </header>
+        <div class="form-container">
+            <form action="{{ url_for('test_session') }}" method="post">
+                <div class="present-simple question">
+                    <label>Present Simple</label>
+
+                    {% if question_verb["BaseForm"].isnull().values.any() %}
+                        <input type="text" placeholder="insert"     name="BaseForm">
+                    {% else %}
+                        <p> {{ question_verb["BaseForm"].values.any() }} </p>
+                    {% endif %}
+                </div>
+                <div class="past-simple question">
+                    <label>Past Simple</label>
+
+                    {% if question_verb["PastSimple"].isnull().values.any() %}
+                        <input type="text" placeholder="insert" name="PastSimple">
+                    {% else %}
+                        <p> {{ question_verb["PastSimple"].values.any() }} </p>
+                    {% endif %}
+                </div>
+                <div class="present-perfect question">
+                    <label>Present Perfect</label>
+                    
+                    {% if question_verb["PastParticiple"].isnull().values.any() %}
+                        <input type="text" placeholder="insert" name="PastParticiple">
+                    {% else %}
+                        <p> {{ question_verb["PastParticiple"].values.any() }} </p>
+                    {% endif %}
+                </div>
+                <div class="italiano question">
+                    <label>Italiano</label>
+                    
+                    {% if question_verb["Translation"].isnull().values.any() %}
+                        <input type="text" placeholder="insert" name="Translation">
+                    {% else %}
+                        <p> {{ question_verb["Translation"].values.any() }} </p>
+                    {% endif %}
+                </div>
+                <button class="btn" type="submit">Next question</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

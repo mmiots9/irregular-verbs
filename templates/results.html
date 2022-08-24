@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+
+    <link rel="stylesheet" href="/static/css/results.css">
+</head>
+<body>
+
+    <table id="verbs-table">
+        <tr class="table-header">
+            <td class="present-simple">Present simple</td>
+            <td class="past-simple">Past simple</td>
+            <td class="past-participle">Past participle</td>
+            <td class="italiano">Italiano</td>
+        </tr>
+
+    {% for row_n in original_verbs.index.values: %}
+        <tr>
+            <!-- PRESENT SIMPLE -->
+            <td class="present-simple">
+                {% if asked_verbs.iloc[row_n].BaseForm != "none" %}
+                    <p class="asked"> 
+                        {{ asked_verbs.iloc[row_n].BaseForm }}
+                    </p>
+                {% else %}
+                    <p>
+                        {% if not checked_answers.iloc[row_n].BaseForm %}
+                            <span class="wrong">
+                                {{ answers.iloc[row_n].BaseForm }}
+                            </span>
+                            <span>&nbsp;</span>
+                        {% endif %}
+
+                        <span class="correct">
+                            {{ original_verbs.iloc[row_n].BaseForm }}
+                        </span>
+                    </p>
+                {% endif %}
+            </td>
+
+            <!-- PAST SIMPLE -->
+            <td class="past-simple">
+                {% if asked_verbs.iloc[row_n].PastSimple != "none" %}
+                <p class="asked">
+                    {{ asked_verbs.iloc[row_n].PastSimple }}
+                </p>
+                {% else %}
+                <p>
+                    {% if not checked_answers.iloc[row_n].PastSimple %}
+                    <span class="wrong">
+                        {{ answers.iloc[row_n].PastSimple }}
+                    </span>
+                    <span>&nbsp;</span>
+                    {% endif %}
+            
+                    <span class="correct">
+                        {{ original_verbs.iloc[row_n].PastSimple }}
+                    </span>
+                </p>
+                {% endif %}
+            </td>
+
+            <!-- PAST PARTICIPLE -->
+            <td class="past-participle">
+                {% if asked_verbs.iloc[row_n].PastParticiple != "none" %}
+                <p class="asked">
+                    {{ asked_verbs.iloc[row_n].PastParticiple }}
+                </p>
+                {% else %}
+                <p>
+                    {% if not checked_answers.iloc[row_n].PastParticiple %}
+                    <span class="wrong">
+                        {{ answers.iloc[row_n].PastParticiple }}
+                    </span>
+                    <span>&nbsp;</span>
+                    {% endif %}
+            
+                    <span class="correct">
+                        {{ original_verbs.iloc[row_n].PastParticiple }}
+                    </span>
+                </p>
+                {% endif %}
+            </td>
+
+            <!-- ITALIANO -->
+            <td class="italiano">
+                {% if asked_verbs.iloc[row_n].Translation != "none" %}
+                <p class="asked">
+                    {{ asked_verbs.iloc[row_n].Translation }}
+                </p>
+                {% else %}
+                <p>
+                    {% if not checked_answers.iloc[row_n].Translation %}
+                    <span class="wrong">
+                        {{ answers.iloc[row_n].Translation }}
+                    </span>
+                    <span>&nbsp;</span>
+                    {% endif %}
+            
+                    <span class="correct">
+                        {{ original_verbs.iloc[row_n].Translation }}
+                    </span>
+                </p>
+                {% endif %}
+            </td>
+                
+
+            
+
+        </tr>
+    {% endfor %}
+
+
+    </table>
+</body>
+</html>
